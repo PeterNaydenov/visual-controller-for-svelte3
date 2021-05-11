@@ -96,3 +96,8 @@ html.destroy ( containerID )
 - Visual controller will provide a "**dependency**" object as a prop to every svelte app created by it. Visual controller will require a configuration object with at least one element: [ 'eBus' ];
 
 
+### Extra
+
+This software has versions for:
+- [Vue 2](https://github.com/PeterNaydenov/visual-controller-for-vue)
+- [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3) 
