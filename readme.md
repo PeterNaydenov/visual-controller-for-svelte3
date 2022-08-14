@@ -1,5 +1,7 @@
 # Visual Controller for Svelte
 
+Tool for building a micro-frontends(MFE) based on Svelte components - Start multiple Svelte applications in the same HTML page and control them.
+
 Install visual controller:
 ```
 npm i @peter.naydenov/visual-controller-for-svelte
@@ -98,6 +100,7 @@ html.destroy ( containerID )
 
 ### Extra
 
-This software has versions for:
+Visual Controller has versions for few other front-end frameworks:
 - [Vue 2](https://github.com/PeterNaydenov/visual-controller-for-vue)
-- [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3) 
+- [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3)
+- [React](https://github.com/PeterNaydenov/visual-controller-for-react) 
