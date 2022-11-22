@@ -106,7 +106,7 @@ let
     // if app exists and 'setupUpdates' was not used -> returns {}
     // in our case -> returns { changeMessage:f }
 if ( !controls )   console.error ( `App for id:"${id}" is not available` )
-else { // component is not available
+else {
         if ( controls.changeMessage )   controls.changeMessage ('new title') 
    }
 ```
