@@ -9,12 +9,13 @@ npm i @peter.naydenov/visual-controller-for-svelte
 
 Initialization process:
 ```js
-import mit from 'mitt' // event emitter by your personal choice.
+import notice from '@peter.naydenov/notice' // event emitter by your personal choice.
 import VisualController from '@peter.naydenov/visual-controller-for-svelte'
 
 let 
-      eBus = mitt ()
-    , html = new VisualController ({ eBus }) // provide event emitter to visual controller as part of config object
+      eBus = notice ()
+    , dependencies = { eBus }  // Provide everything that should be exposed to components 
+    , html = new VisualController ( dependencies ) 
     ;
 // Ready for use...
 ```
@@ -27,12 +28,40 @@ html.publish ( Hello, {greeting:'Hi'}, 'app' )
 //arguments are: ( component, props, containerID )
 ```
 
+## Inside of the Components
+
+*Note: If your component should be displayed only, that section can be skipped.*
+
+All provided libraries during visualController initialization are available if you export variable with name `dependencies`. Export also `setupUpdates` if you need to manipulate component 
+
+```js
+
+let msg = 'Vite + Svelte'
+export let dependencies, setupUpdates;
+const { eBus } = dependencies
+
+setupUpdates ({   // Provides to visualContoller method 'changeMessage' 
+          changeMessage (update) {
+                  msg = update
+              }
+    })
+```
+
+The external call will look like this:
+
+```js
+html.getApp ( 'app' ).changeMessage ( 'New message content' )
+```
+
+
+
 
 ## Visual Controller Methods
 ```js
   publish : 'Render svelte app in container. Associate app instance with the container.'
 , getApp  : 'Returns app instance by container name'
 , destroy : 'Destroy app by using container name '
+, has     : 'Checks if app with specific "id" was published'
 ```
 
 
@@ -45,11 +74,11 @@ html.publish ( component, props, containerID )
 - **component**: *object*. Svelte component
 - **props**: *object*. Svelte components props
 - **containerID**: *string*. Id of the container where svelte-app will live.
+- **returns**: *Promise<Object>*. Update methods library if defined. Else will return a empty object;
 
 Example:
 ```js
- let html = new VisualController ({ eBus });
-
+ let html = new VisualController ();
  html.publish ( Hi, { greeting: 'hi'}, 'app' )
 ```
 
@@ -60,7 +89,7 @@ Render component 'Hi' with prop 'greeting' and render it in html element with id
 
 
 ### VisualController.getApp ()
-Returns svelte-app associated with a container. Provides access to the methods of parent svelte-app component.
+Returns the library of functions provided from method `setupUpdates`. If svelte-app never called `setupUpdates`, result will be an empty object.
 
 ```js
  let controls = html.getApp ( containerID )
@@ -73,9 +102,12 @@ let
       id = 'videoControls'
     , controls = html.getApp ( id )
     ;
-if ( controls )   controls.pushPlay () // use methods of the component
+    // if app with 'id' doesn't exist -> returns false, 
+    // if app exists and 'setupUpdates' was not used -> returns {}
+    // in our case -> returns { changeMessage:f }
+if ( !controls )   console.error ( `App for id:"${id}" is not available` )
 else { // component is not available
-       console.error ( `App for id:"${id}" is not available` )
+        if ( controls.changeMessage )   controls.changeMessage ('new title') 
    }
 ```
 If visual controller(html) has a svelte app associated with this name will return it. Otherwise will return **false**.
@@ -93,14 +125,31 @@ html.destroy ( containerID )
 ```
 - **containerID**: *string*. Id name.
 
-## Other details and requirements
-
-- Visual controller will provide a "**dependency**" object as a prop to every svelte app created by it. Visual controller will require a configuration object with at least one element: [ 'eBus' ];
 
 
 ### Extra
 
 Visual Controller has versions for few other front-end frameworks:
-- [Vue 2](https://github.com/PeterNaydenov/visual-controller-for-vue)
-- [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3)
 - [React](https://github.com/PeterNaydenov/visual-controller-for-react) 
+- [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3)
+- [Vue 2](https://github.com/PeterNaydenov/visual-controller-for-vue)
+
+
+
+
+
+## Release History
+
+### 2.0.0 ( 2022-11-22)
+- [x] Full rewrite of the library;
+- [x] Method 'has' was added;
+- [x] Support for SSR hydration;
+- [x] Method 'publish' returns a promise;
+- [x] Testing;
+- [x] Documentation update;
+
+
+
+### 1.0.0 (2021-05-11)
+- [x] Code;
+- [x] Documentation;

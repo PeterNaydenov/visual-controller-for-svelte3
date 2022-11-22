@@ -1,0 +1,7 @@
+node_modules
+cypress
+dist
+dist-ssr
+
+.vscode/*
+.DS_Store

@@ -1,5 +1,7 @@
 "use strict"
 
+import askForPromise from "ask-for-promise"
+
 /**
  *  Visual Controller for Svelte 3
  *  Controls multiple svelte 3 apps with a single controller.
@@ -7,15 +9,13 @@
 
 class VisualController {
 
-    constructor ( dependencies ) {
-              const { eBus } = dependencies;
+    constructor ( dependencies = {} ) {
               const cache = {}  // collect svelte components
-              this.dependencies = { ...dependencies }
-              if ( !eBus )   console.error ( 'eBus is required' )
               return {
                           publish : this.publish ( dependencies, cache )
                         , destroy : this.destroy ( cache )
                         , getApp  : this.getApp  ( cache )
+                        , has     : id => cache[id] ? true : false
                     }
         }
 
@@ -23,31 +23,45 @@ class VisualController {
 
     publish ( dependencies, cache ) {
         return function (Component, data, id) {
-                const hasKey = this.destroy ( id );
-                let   node;
+                const 
+                      hasKey = this.has ( id )
+                    , endTask = askForPromise ()
+                    ;
+
                 if ( !Component ) {
                         console.error ( `Error: Component is undefined` )
-                        return false
+                        endTask.done ( false )
+                        return endTask.promise
                    }
-                if ( !hasKey ) {   // if container is not registered before 
-                        node = document.getElementById ( id )
-                        if ( !node ) {  
-                                    console.error ( `Can't find node with id: "${id}"`)
-                                    return false
-                            }
+
+                if ( hasKey )   this.destroy ( id )
+
+                let 
+                      node = document.getElementById ( id )
+                    , updates = false
+                    , setupUpdates = lib => updates = lib
+                    ;
+
+                if ( !node ) {  
+                            console.error ( `Can't find node with id: "${id}"`)
+                            endTask.done ( false )
+                            return endTask.promise
                     }
 
-                let app = new Component ({ target : node, props: { dependencies,...data }   });
+                if ( node.innerHTML.trim() !== '' )   node.innerHTML = ''
+
+                let app = new Component ({ target : node, props: { dependencies, setupUpdates, ...data }   });
                 cache[id] = app
-                return true
+                cache[id]['updates'] = updates ? updates : {}
+                endTask.done ( cache[id]['updates'] )
+                return endTask.promise
             }} // publish func.
 
 
 
     destroy ( cache ) {
         return function (id) {
-                const htmlKeys = Object.keys(cache);
-                if ( htmlKeys.includes(id) ) {                    
+                if ( cache[id] ) {                    
                         let 
                               item    = cache[id]
                             , unmount = item.$destroy
@@ -68,7 +82,7 @@ class VisualController {
                         console.error ( `App with id: "${id}" was not found.`)
                         return false
                     }
-                return item
+                return item['updates']
         }} // getApp func.
 } // visualController
 
