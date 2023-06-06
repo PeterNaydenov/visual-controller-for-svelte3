@@ -1,6 +1,6 @@
-const cfg = require ("cypress");
+import cfg from 'cypress'
 
-module.exports = cfg.defineConfig({
+export default cfg.defineConfig({
   component: {
     devServer: {
       framework: "svelte",
