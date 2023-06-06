@@ -140,6 +140,9 @@ Visual Controller has versions for few other front-end frameworks:
 
 ## Release History
 
+### 2.0.1 ( 2023-06-06)
+- [x] Works with vite version 4.x.x;
+
 ### 2.0.0 ( 2022-11-22)
 - [x] Full rewrite of the library;
 - [x] Method 'has' was added;
