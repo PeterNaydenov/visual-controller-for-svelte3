@@ -1,5 +1,7 @@
 # Visual Controller for Svelte
 
+*NOTE: Version 2.0.2 works with `Svelte 4`. Product is not changed, just the dependency. If you need version 3 of Svelte, use version 2.0.1 of this library.*
+
 Tool for building a micro-frontends(MFE) based on Svelte components - Start multiple Svelte applications in the same HTML page and control them.
 
 Install visual controller:
@@ -139,6 +141,11 @@ Visual Controller has versions for few other front-end frameworks:
 
 
 ## Release History
+
+
+### 2.0.2 ( 2023-06-25)
+- [x] Using svelte version 4.x.x;
+- [x] No other changes in the product;
 
 ### 2.0.1 ( 2023-06-06)
 - [x] Works with vite version 4.x.x;
