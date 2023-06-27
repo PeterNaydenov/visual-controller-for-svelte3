@@ -19,7 +19,7 @@ root.id = 'el'
 
 
 
-describe ( 'Visual Controller for svelte 3', () => {
+describe ( 'Visual Controller for svelte 3 and 4', () => {
 
     it ( 'Method "publish" returns a promise', () => {
                 const result = html.publish ( App, {}, 'el' )
