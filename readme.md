@@ -1,6 +1,6 @@
-# Visual Controller for Svelte
+# Visual Controller for Svelte (@peter.naydenov/visual-controller-for-svelte3)
 
-*NOTE: Version 2.0.2 works with `Svelte 4`. Product is not changed, just the dependency. If you need version 3 of Svelte, use version 2.0.1 of this library.*
+*NOTE: After version 2.0.2 the library works with `Svelte 4`. Product is not changed, just the dependency. If you need version 3 of Svelte, use version 2.0.1 of this library.*
 
 ![version](https://img.shields.io/github/package-json/v/peterNaydenov/visual-controller-for-svelte3)
 ![license](https://img.shields.io/github/license/peterNaydenov/visual-controller-for-svelte3)
@@ -17,7 +17,7 @@ npm i @peter.naydenov/visual-controller-for-svelte
 Initialization process:
 ```js
 import notice from '@peter.naydenov/notice' // event emitter by your personal choice.
-import VisualController from '@peter.naydenov/visual-controller-for-svelte'
+import VisualController from '@peter.naydenov/visual-controller-for-svelte3'
 
 let 
       eBus = notice ()
