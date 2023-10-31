@@ -148,6 +148,12 @@ Visual Controller has versions for few other front-end frameworks:
 ## Release History
 
 
+
+### 2.0.4 ( 2023-10-31)
+- [x] Dependency update. Ask-for-promise@1.5.0;
+
+
+
 ### 2.0.2 ( 2023-06-25)
 - [x] Using svelte version 4.x.x;
 - [x] No other changes in the product;
