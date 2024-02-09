@@ -16,8 +16,15 @@ npm i @peter.naydenov/visual-controller-for-svelte
 
 Initialization process:
 ```js
+// for es6 module projects:
 import notice from '@peter.naydenov/notice' // event emitter by your personal choice.
 import VisualController from '@peter.naydenov/visual-controller-for-svelte3'
+
+// for commonjs projects:
+const notice = require('@peter.naydenov/notice')
+const VisualController = require('@peter.naydenov/visual-controller-for-svelte3')
+
+
 
 let 
       eBus = notice ()
@@ -145,32 +152,18 @@ Visual Controller has versions for few other front-end frameworks:
 
 
 
-## Release History
+## Links
+
+- [History of changes](https://github.com/PeterNaydenov/visual-controller-for-svelte3/blob/master/Changelog.md)
+- [License](https://github.com/PeterNaydenov/visual-controller-for-svelte3/blob/master/LICENSE)
 
 
 
-### 2.0.4 ( 2023-10-31)
-- [x] Dependency update. Ask-for-promise@1.5.0;
+## Credits
+'visual-controller-for-svelte3' is created and supported by Peter Naydenov
 
 
 
-### 2.0.2 ( 2023-06-25)
-- [x] Using svelte version 4.x.x;
-- [x] No other changes in the product;
+## License
 
-### 2.0.1 ( 2023-06-06)
-- [x] Works with vite version 4.x.x;
-
-### 2.0.0 ( 2022-11-22)
-- [x] Full rewrite of the library;
-- [x] Method 'has' was added;
-- [x] Support for SSR hydration;
-- [x] Method 'publish' returns a promise;
-- [x] Testing;
-- [x] Documentation update;
-
-
-
-### 1.0.0 (2021-05-11)
-- [x] Code;
-- [x] Documentation;
+'visual-controller-for-svelte3' is released under the [MIT license](https://github.com/PeterNaydenov/visual-controller-for-svelte3/blob/master/LICENSE)

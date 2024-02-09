@@ -4,11 +4,21 @@
   "version": "2.0.4",
   "license": "MIT",
   "author": "Peter Naydenov",
-  "main": "src/main.js",
+  "main": "dist/visual-controller-for-svelte.umd.js",
   "type": "module",
+  "exports": {
+            ".": {
+              "import": "./dist/visual-controller-for-svelte.esm.mjs",
+              "require": "./dist/visual-controller-for-svelte.cjs",
+              "default": "./dist/visual-controller-for-svelte.umd.js"
+            },
+            "./package.json": "./package.json",
+            "./dist/*": "./dist/*",
+            "./src/*": "./src/*"
+      },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "rollup -c",
     "preview": "vite preview",
     "test": "cypress open --component --browser chrome"
   },
@@ -17,6 +27,9 @@
   },
   "devDependencies": {
     "@peter.naydenov/notice": "^2.2.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "cypress": "^13.6.4",
     "svelte": "^4.2.10",
