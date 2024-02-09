@@ -1,21 +1,21 @@
 {
   "name": "@peter.naydenov/visual-controller-for-svelte3",
   "description": "Tool for building a micro-frontends(MFE) based on Svelte component",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "license": "MIT",
   "author": "Peter Naydenov",
   "main": "dist/visual-controller-for-svelte.umd.js",
   "type": "module",
   "exports": {
-            ".": {
-              "import": "./dist/visual-controller-for-svelte.esm.mjs",
-              "require": "./dist/visual-controller-for-svelte.cjs",
-              "default": "./dist/visual-controller-for-svelte.umd.js"
-            },
-            "./package.json": "./package.json",
-            "./dist/*": "./dist/*",
-            "./src/*": "./src/*"
-      },
+    ".": {
+      "import": "./dist/visual-controller-for-svelte.esm.mjs",
+      "require": "./dist/visual-controller-for-svelte.cjs",
+      "default": "./dist/visual-controller-for-svelte.umd.js"
+    },
+    "./package.json": "./package.json",
+    "./dist/*": "./dist/*",
+    "./src/*": "./src/*"
+  },
   "scripts": {
     "dev": "vite",
     "build": "rollup -c",
