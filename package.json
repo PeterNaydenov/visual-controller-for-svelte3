@@ -26,14 +26,14 @@
     "ask-for-promise": "^2.0.3"
   },
   "devDependencies": {
-    "@peter.naydenov/notice": "^2.2.3",
+    "@peter.naydenov/notice": "^2.3.1",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "cypress": "^13.6.6",
+    "cypress": "^13.7.2",
     "svelte": "^4.2.12",
-    "vite": "^5.1.6"
+    "vite": "^5.2.8"
   },
   "repository": {
     "type": "git",
