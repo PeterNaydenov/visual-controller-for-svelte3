@@ -30,10 +30,10 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "cypress": "^13.7.2",
-    "svelte": "^4.2.12",
-    "vite": "^5.2.8"
+    "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "cypress": "^13.7.3",
+    "svelte": "^4.2.15",
+    "vite": "^5.2.9"
   },
   "repository": {
     "type": "git",
