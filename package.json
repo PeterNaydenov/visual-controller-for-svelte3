@@ -26,13 +26,13 @@
     "ask-for-promise": "^2.0.3"
   },
   "devDependencies": {
-    "@peter.naydenov/notice": "^2.3.1",
-    "@rollup/plugin-commonjs": "^28.0.1",
-    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@peter.naydenov/notice": "^2.3.2",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
-    "cypress": "^13.16.0",
-    "svelte": "^4.2.18",
+    "cypress": "^13.17.0",
+    "svelte": "^4.2.19",
     "vite": "^5.4.11"
   },
   "repository": {
