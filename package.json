@@ -23,7 +23,7 @@
     "test": "cypress open --component --browser chrome"
   },
   "dependencies": {
-    "ask-for-promise": "^2.0.3"
+    "ask-for-promise": "^3.0.1"
   },
   "devDependencies": {
     "@peter.naydenov/notice": "^2.3.2",
