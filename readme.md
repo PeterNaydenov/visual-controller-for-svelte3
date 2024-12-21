@@ -11,7 +11,7 @@ Tool for building a micro-frontends(MFE) based on Svelte components - Start mult
 
 Install visual controller:
 ```
-npm i @peter.naydenov/visual-controller-for-svelte
+npm i @peter.naydenov/visual-controller-for-svelte3
 ```
 
 Initialization process:
