@@ -23,17 +23,17 @@
     "test": "cypress open --component --browser chrome"
   },
   "dependencies": {
-    "ask-for-promise": "^3.0.1"
+    "ask-for-promise": "^3.1.0"
   },
   "devDependencies": {
-    "@peter.naydenov/notice": "^2.4.0",
-    "@rollup/plugin-commonjs": "^28.0.3",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@peter.naydenov/notice": "^2.4.2",
+    "@rollup/plugin-commonjs": "^28.0.9",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "cypress": "^13.17.0",
-    "svelte": "^4.2.19",
-    "vite": "^7.2.4"
+    "svelte": "^5.55.3",
+    "vite": "^7.3.2"
   },
   "repository": {
     "type": "git",
