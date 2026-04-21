@@ -149,6 +149,7 @@ Visual Controller has versions for few other front-end frameworks:
 - [Vue 3](https://github.com/PeterNaydenov/visual-controller-for-vue3)
 - [Solid](https://github.com/PeterNaydenov/
 visual-controller-for-solid)
+- [Lit](https://github.com/PeterNaydenov/visual-controller-for-lit)
 - [Preact](https://github.com/PeterNaydenov/visual-controller-for-preact)
 - [Vue 2](https://github.com/PeterNaydenov/visual-controller-for-vue)
 
