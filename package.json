@@ -20,20 +20,21 @@
     "dev": "vite",
     "build": "rollup -c",
     "preview": "vite preview",
-    "test": "cypress open --component --browser chrome"
+    "test": "vitest run",
+    "cover": "vitest run --coverage"
   },
   "dependencies": {
-    "ask-for-promise": "^3.1.0"
+    "ask-for-promise": "^3.2.0"
   },
   "devDependencies": {
-    "@peter.naydenov/notice": "^2.4.2",
     "@rollup/plugin-commonjs": "^28.0.9",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
-    "cypress": "^13.17.0",
-    "svelte": "^5.55.3",
-    "vite": "^7.3.2"
+    "@vitest/coverage-v8": "^4.1.10",
+    "jsdom": "^30.0.1",
+    "vite": "^7.3.2",
+    "vitest": "^4.1.10"
   },
   "repository": {
     "type": "git",
