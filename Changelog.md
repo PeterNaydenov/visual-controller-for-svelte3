@@ -1,5 +1,9 @@
 # Release History
 
+## 3.0.1 (2026-08-30)
+- [x] Fix: Wrong dependencies moved the library to svelte 5 and the plugin fails;
+- Some possible dev dependencies update;
+
 
 
 ### 3.0.0 (2026-08-03)
@@ -13,7 +17,7 @@
 - [x] `destroy()` is polymorphic — accepts no argument (destroys every published app, returns count), an alias string, or an array of alias strings. Markers stay in the DOM in every form.
 - [x] No `@peter.naydenov/dim` dependency. The slim subset of dim the controller uses is inlined in `src/dim.js`. The file header documents the upstream reference for syncing if the official package changes.
 - [x] `extraParams` slot accepted but ignored — reserved for future use.
-
+- [ ] Bug: Wrong dependencies moved the library to svelte 5 and the plugin fails;
 
 
 ### 2.1.2 ( 2024-12-21 )
