@@ -1,4 +1,5 @@
 <script>
+  export let dependencies;
   export let setupUpdates;
 
   let message = 'Hello from Header!';
