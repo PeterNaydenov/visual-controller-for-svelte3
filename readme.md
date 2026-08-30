@@ -257,6 +257,7 @@ If your component needs access to external libraries, export `dependencies`. Eve
 
 ```svelte
 <script>
+  // svelte-ignore unused-export-let
   export let dependencies;
   export let setupUpdates;
 
@@ -455,7 +456,7 @@ html.getApp('header')
 
 **Step 4 — Nothing else changes inside components.**
 
-The `export let dependencies` / `export let setupUpdates` block is identical between v2 and v3. `dependencies`, `setupUpdates`, and the component-side injection all work the same.
+The `export let dependencies` / `export let setupUpdates` block is identical between v2 and v3. `dependencies`, `setupUpdates`, and the component-side injection all work the same. (Add `// svelte-ignore unused-export-let` above `export let dependencies` if the demo component never reads `dependencies` — otherwise the Svelte compiler will emit a benign `unused-export-let` hint.)
 
 ### Common patterns
 

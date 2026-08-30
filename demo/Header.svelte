@@ -1,4 +1,5 @@
 <script>
+  // svelte-ignore unused-export-let
   export let dependencies;
   export let setupUpdates;
 

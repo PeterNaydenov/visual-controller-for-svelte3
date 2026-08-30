@@ -4,3 +4,6 @@ dist-ssr
 .vscode/*
 .DS_Store
 coverage
+
+# Local scratch / probe files
+.tmp_*
