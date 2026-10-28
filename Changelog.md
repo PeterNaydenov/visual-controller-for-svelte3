@@ -1,8 +1,19 @@
 # Release History
 
+
+
+### 3.0.2 (2026-10-28)
+- [x] **Added TypeScript declarations.** The package shipped without any, so TypeScript consumers got `TS2307: Cannot find module '@peter.naydenov/visual-controller-for-svelte3'`. The types are generated from the JSDoc in `src/main.js` — `dist/main.d.ts` for the instance types and `dist/index.d.ts` for the public entry — and the `exports` map now points each condition at its own declaration file.
+- [x] **`new VisualController()` now type-checks** (`TS7009: 'new' expression, whose target lacks a construct signature`). TypeScript's declaration emit for a JSDoc function is always `declare function X(...)` — a call signature with no construct signature — and a JSDoc type literal cannot express `new (...)` either. A new type-only entry (`src/index.ts` → `dist/index.d.ts`) declares the default export with both a call signature and a construct signature. Both forms work at runtime — `VisualController` returns the instance object, and a constructor returning an object hands that object back.
+- [x] `SetupUpdates` is typed as `Record<string, any>`, so `html.getApp('header').changeMessage('...')` type-checks without a cast — the component decides which methods it exposes.
+- [x] CommonJS declarations (`dist/main.d.cts`, `dist/index.d.cts`) are generated next to the ESM ones, so `require()` consumers get types as well (`TS1479` otherwise).
+- [x] Added TypeScript as a dev dependency, plus `tsconfig.types.json` and a `types` build step, so the declarations are generated from the JSDoc like in the other packages of the family.
+
+
+
 ## 3.0.1 (2026-08-30)
 - [x] Fix: Wrong dependencies moved the library to svelte 5 and the plugin fails;
-- Some possible dev dependencies update;
+- [x] Some possible dev dependencies update;
 
 
 
