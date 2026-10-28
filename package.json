@@ -8,8 +8,14 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/visual-controller-for-svelte.esm.mjs",
-      "require": "./dist/visual-controller-for-svelte.cjs",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/visual-controller-for-svelte.esm.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/visual-controller-for-svelte.cjs"
+      },
       "default": "./dist/visual-controller-for-svelte.umd.js"
     },
     "./package.json": "./package.json",
@@ -18,10 +24,11 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c",
+    "build": "rollup -c && npm run types",
     "preview": "vite preview",
     "test": "vitest run",
-    "cover": "vitest run --coverage"
+    "cover": "vitest run --coverage",
+    "types": "tsc -p tsconfig.types.json && node scripts/generate-cjs-types.mjs"
   },
   "dependencies": {
     "ask-for-promise": "^3.2.0",
@@ -34,6 +41,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.1.2",
     "@vitest/coverage-v8": "^2.1.3",
     "jsdom": "^26.0.0",
+    "typescript": "^7.0.2",
     "vite": "^5.4.20",
     "vitest": "^2.1.9"
   },
@@ -53,5 +61,6 @@
   ],
   "allowScripts": {
     "fsevents@2.3.3": true
-  }
+  },
+  "types": "./dist/index.d.ts"
 }
